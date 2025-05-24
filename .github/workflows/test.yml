@@ -9,6 +9,7 @@ on:
 jobs:
   deploy-kepler:
     runs-on: ubuntu-latest
+    environment: "DEV"
     steps:
       - uses: actions/checkout@v3
       - name: 'Test'
@@ -16,4 +17,4 @@ jobs:
          echo "ENV AWS_ACCOUNT_ENV_VARIABLE ${{ env.AWS_ACCOUNT_ENV_VARIABLE }}"
          echo "ENV AWS_ACCOUNT_REPO_VARIABLE ${{ env.AWS_ACCOUNT_REPO_VARIABLE }}"
          echo "VARS AWS_ACCOUNT_ENV_VARIABLE ${{ vars.AWS_ACCOUNT_ENV_VARIABLE }}"
-         echo "VARS AWS_ACCOUNT_ENV_VARIABLE ${{ vars.AWS_ACCOUNT_REPO_VARIABLE }}"
+         echo "VARS AWS_ACCOUNT_REPO_VARIABLE ${{ vars.AWS_ACCOUNT_REPO_VARIABLE }}"

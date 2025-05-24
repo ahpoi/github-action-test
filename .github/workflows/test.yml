@@ -6,10 +6,12 @@ on:
       - main
 
 
+
 jobs:
   deploy-kepler:
     runs-on: ubuntu-latest
-    environment: "DEV"
+    env:
+      AWS_ACCOUNT_ENV_VARIABLE: ${{ vars.AWS_ACCOUNT_ENV_VARIABLE }}
     steps:
       - uses: actions/checkout@v3
       - name: 'Test'
